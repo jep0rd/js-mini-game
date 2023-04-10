@@ -219,7 +219,6 @@ let mode = normalMode;
 // functions
 function difficulty(event){
   gameDif = event.target.value;
-  console.log(gameDif);
 }
 
 function compChose(i){
@@ -244,7 +243,6 @@ function compChose(i){
   i = Math.trunc(Math.random() * mode.length);
   comp = mode[i].pokemon;
   comp_img = mode[i].img;
-  console.log(i);
 }
 
 function playerChoseSquirtle(){ 
@@ -296,9 +294,6 @@ function intGame(){
 
 function roundResult(){
   compChose();
-  console.log(player);
-  console.log(comp);
-  console.log(mode);
   compImg.src = comp_img;
   compImg.style.width = "75px";
   loadingText.style.fontSize = "2.5rem";
