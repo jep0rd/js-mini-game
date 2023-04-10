@@ -77,11 +77,11 @@ h1{
   align-items: center;
   justify-content: center;
 }
-.image-container img{
+#display{
   width: 50px;
   transform: scaleX(-1);
 }
-.image-container img{
+#display2{
   width: 50px;
 }
 #squirtle{
