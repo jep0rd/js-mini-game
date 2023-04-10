@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* 
+  font-family: 'Alkatra', cursive;
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif; 
+*/
+
+@font-face {
+  font-family: Minecraft;
+  src: url(/assets/font/Minecraft.ttf);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: auto;
+  font-family: Minecraft;
+  cursor: url(../images/pokeball-cursor2.gif), auto;
+}
+body{
+  background-color: black;
+  background-image: url(/assets/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+body::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 1)10%,
+    rgba(0, 0, 0, 0)
+  );
+  z-index: -1;
+}
+.flex-r{
+  display: flex;
+}
+.flex-c{
+  display: flex;
+  flex-direction: column;
+}
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+
+h1{
+  color: white;
+  font-weight: bolder;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  height: 100%;
+  top: 50px;
+}
+.main-body
+{
+  min-width: 1200px;
+  min-height: 300px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+
+  color: white;
+}
+.main-body > * {
+  width: 30%;
+}
+.image-container{
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+}
+.image-container img{
+  width: 50px;
+  transform: scaleX(-1);
+}
+.image-container img{
+  width: 50px;
+}
+#squirtle{
+  background: transparent;
+  border: 0;
+}
+#squirtle img{
+  width: 45px;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+}
+.buttons-body{
+  left: 10px;
+  width: auto;
+}
+.buttons-body > *{
+  padding: 10px;
+}
+#charmander{
+  background: transparent;
+  border: 0;
+}
+#charmander img{
+  width: 45px;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+}
+
+#bulbasaur{
+  background: transparent;
+  border: 0;
+}
+#bulbasaur img{
+  width: 45px;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+}
+
+.menu-body img{
+  width: 50px;
+}
+#loading-text{
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  display: none;
+}
+#loading-animation{
+  display: none;
+}
+
+.participants{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+#player-score, #comp-score{
+  font-size: 3rem;
+  font-weight: bolder;
+  color: black;
+  padding: 10px 30px 0px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#battle{
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  border: 0;
+  background: transparent;
+  color: white;
+  animation: fightAnimation .35s infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes fightAnimation {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+#next-rd{
+  display: none;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+  padding: 10px 15px 5px 20px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  border: 3px outset gray;
+  background-color: rgb(180, 177, 177);
+}
+#next-rd:active{
+  border: 3px inset gray;
+}
+#new-game-btn{
+  display: none;
+  padding: 10px 15px 5px 20px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  border: 3px outset gray;
+  background-color: rgb(180, 177, 177);
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+
+}
+#new-game-btn:active{
+  border-style: inset;
+}
+
+/* other-options */
+.other-options{
+  color: white;
+  gap: 25px;
+}
+#win-text{
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+#reset{
+  padding: 10px 15px 5px 20px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  border: 3px outset gray;
+  background-color: rgb(180, 177, 177);
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+}
+#reset:active{
+  border-style: inset;
+}
+
+
+/* modal */
+.modal{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(5, 5, 5, 0.815);
+  z-index: 1;
+  top: 0;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.game-mode-container{
+  min-width: 600px;
+  height: 400px;
+  background-color: grey;
+  padding: 25px;
+  border: 5px outset rgb(153, 153, 153);
+}
+
+.game-mode-title{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.difficulty-btns{
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.difficulty-btns label, .rounds-btns label{
+  margin: 10px 0 0;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+  background-color: transparent;
+  padding: 5px 20px 0;
+  border: 3px outset gray;
+  font-size: 1.5rem;
+}
+input[name="difficulty"], input[name="rounds"]{
+  display: none;
+}
+#easy:checked ~ label[for="easy"]{
+    background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+#normal:checked ~ label[for="normal"]{
+    background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+#hard:checked ~ label[for="hard"]{
+    background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+
+#three-rds:checked ~ label[for="three-rds"]{
+    background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+#five-rds:checked ~ label[for="five-rds"]{
+    background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+#seven-rds:checked ~ label[for="seven-rds"]{
+  background-color: rgb(180, 177, 177);
+  border-style: inset;
+}
+.rounds-btns{
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+#start-btn{
+  padding: 15px 25px 5px;
+  font-size: 2rem;
+  border: 5px outset gray;
+  background-color: transparent;
+  cursor: url(../images/pokeball-cursor.gif), pointer;
+}
+
+#start-btn:active{
+  background-color: rgb(180, 177, 177);
+  transition: all .1s;
+  border-style: inset;
+}

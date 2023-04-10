@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- title / banner -->
+  <header class="flex-c banner-body relative">
+    <h1 class="relative">JS MINI GAME</h1>
+  </header>
+
+  <!-- game-body -->
+  <main id="main" class="flex-r main-body relative" >
+    <div class="flex-c buttons-body absolute">
+      <button id="squirtle">
+        <img src="assets/images/icon1.png" alt="..">
+      </button>
+      <button id="charmander">
+        <img src="assets/images/icon2.png" alt="..">
+      </button>
+      <button id="bulbasaur">
+        <img src="assets/images/icon3.png" alt="..">
+      </button>
+    </div>
+    <div class="flex-c player-body">
+      <div class="image-container flex-c">
+        <img id="display" src="assets/images/pokemon-ball.gif" alt="...">
+      </div>
+      <span class="participants">PLAYER</span>
+      <span id="player-score">0</span>
+    </div>
+    <div class="flex-c menu-body">
+      <img id="loading-animation" src="assets/images/loading.gif" alt="">
+      <span id="loading-text">Computer is thinking</span>
+      <button id="battle">
+        FIGHT
+      </button>
+      <button id="next-rd">NEXT ROUND</button>
+      <button id="new-game-btn">NEW GAME</button>
+    </div>
+    <div class="flex-c comp-body">
+      <div class="image-container flex-c">
+        <img id="display2" src="assets/images/pokemon-ball.gif" alt="...">
+      </div>
+      <span class="participants">COMPUTER</span>
+      <span id="comp-score">0</span>
+    </div>
+  </main>
+
+  <!-- other-options -->
+  <div class="flex-c other-options">
+    <span id="win-text"></span>
+    <button id="reset">RESET</button>
+  </div>
+
+  <!-- modal -->
+  <div id="game-mode-modal" class="flex-r modal absolute">
+    <div class="game-mode-container relative">
+      <div class="flex-c difficulty">
+        <span class="game-mode-title">Difficulty</span>
+        <div class="difficulty-btns flex-r">
+          <input id="easy" type="radio" name="difficulty"  value="easy">
+          <label for="easy">Easy</label>
+          <input id="normal" type="radio" name="difficulty"  value="normal">
+          <label for="normal">Normal</label>
+          <input id="hard" type="radio" name="difficulty" value="hard">
+          <label for="hard">Ginoo</label>
+        </div>
+
+        <span class="game-mode-title">BEST OF</span>
+        <div class="rounds-btns flex-r">
+          <input id="three-rds" type="radio" name="rounds"  value="3">
+          <label for="three-rds">3 wins</label>
+          <input id="five-rds" type="radio" name="rounds"  value="5">
+          <label for="five-rds">5 wins</label>
+          <input id="seven-rds" type="radio" name="rounds" value="7">
+          <label for="seven-rds">7 wins</label>
+        </div>
+        <button id="start-btn">START GAME</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/script/script.js">
+  </script>
+</body>
+</html>
