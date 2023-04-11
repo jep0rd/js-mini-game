@@ -378,27 +378,27 @@ function winnerResult(){
   const newSpan = document.createElement("span");
   switch (true){
     case (loadingText.textContent == "Player win!") :
-      resultText.appendChild(newSpan);
+      resultText.insertBefore(newSpan, resultText.firstChild);
       newSpan.innerText = "Player win the game";
       newSpan.style.color = "#16FF00"
       break;
     case (loadingText.textContent == "Computer win!") :
-      resultText.appendChild(newSpan);
+      resultText.insertBefore(newSpan, resultText.firstChild);
       newSpan.innerText = "Computer win the game";
       newSpan.style.color = "#DF2E38"
       break;
     case (loadingText.textContent == "You win!") :
-      resultText.appendChild(newSpan);
+      resultText.insertBefore(newSpan, resultText.firstChild);
       newSpan.innerText = "Player win the round";
       newSpan.style.color = "darkgray"
       break;
     case (loadingText.textContent == "You lose!") :
-      resultText.appendChild(newSpan);
+      resultText.insertBefore(newSpan, resultText.firstChild);
       newSpan.style.color = "darkgray"
       newSpan.innerText = "Computer win the round";
       break;
     case (loadingText.textContent == "Draw") :
-      resultText.appendChild(newSpan);
+      resultText.insertBefore(newSpan, resultText.firstChild);
       newSpan.innerText = "Draw";
       newSpan.style.color = "darkgray"
       break;
