@@ -154,7 +154,7 @@ h1{
   justify-content: center;
 }
 @keyframes fightAnimation {
-  0% { transform: translateY(0); }
+  0% { transform: translatey(0); }
   100% { transform: translateY(-5px); }
 }
 
@@ -297,3 +297,6 @@ input[name="difficulty"], input[name="rounds"]{
   transition: all .1s;
   border-style: inset;
 }
+/* #bg-audio{
+  visibility: hidden;
+} */

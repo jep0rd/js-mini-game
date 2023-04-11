@@ -15,7 +15,8 @@ let counter = 0;
 let gameDif = "none";
 let player = "none";
 let comp = "none";
-
+let bgAudio = document.querySelector("#bg-audio")
+bgAudio.volume = .1;
 
 // easy mpde
 const easyMode1 = [
@@ -215,6 +216,7 @@ startBtn.addEventListener("click", startGame);
 newGame.addEventListener("click", reset);
 resetBtn.addEventListener("click", reset);
 
+
 let mode = normalMode;
 // functions
 function difficulty(event){
@@ -237,9 +239,6 @@ function compChose(i){
   } else {
     mode = normalMode;
   }
-
-
-
   i = Math.trunc(Math.random() * mode.length);
   comp = mode[i].pokemon;
   comp_img = mode[i].img;
@@ -274,9 +273,8 @@ function intGame(){
     battle.style.display = "none";
     loadingText.style.display = "block";
     loadingAnimation.style.display = "block";
-    const loadingID = setInterval(loading, 500);
-    
 
+    const loadingID = setInterval(loading, 500);
     function loading(){
       if (counter == 3){
         clearInterval(loadingID);
