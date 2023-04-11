@@ -423,4 +423,7 @@ function reset(){
   modal.style.display = "flex";
   gameDif = "none";
   nextRound();
+  while(resultText.firstChild){
+    resultText.removeChild(resultText.firstElementChild);
+  }
 }
