@@ -8,6 +8,7 @@ let playerScoreText = document.querySelector("#player-score");
 let compScoreText = document.querySelector("#comp-score");
 let modal = document.querySelector("#game-mode-modal");
 let winText = document.querySelector("#win-text");
+let resultText = document.querySelector("#result-text")
 let playerScore = 0;
 let compScore = 0;
 let winnerScore = 0;
@@ -15,8 +16,7 @@ let counter = 0;
 let gameDif = "none";
 let player = "none";
 let comp = "none";
-
-
+let mode;
 // easy mpde
 const easyMode1 = [
   {
@@ -215,7 +215,7 @@ startBtn.addEventListener("click", startGame);
 newGame.addEventListener("click", reset);
 resetBtn.addEventListener("click", reset);
 
-let mode = normalMode;
+
 // functions
 function difficulty(event){
   gameDif = event.target.value;
@@ -237,8 +237,6 @@ function compChose(i){
   } else {
     mode = normalMode;
   }
-
-
 
   i = Math.trunc(Math.random() * mode.length);
   comp = mode[i].pokemon;
@@ -301,7 +299,7 @@ function roundResult(){
     loadingText.textContent = "You win!";
     loadingText.style.color = "#16FF00";
     playerScore++;
-    playerScoreText.textContent = playerScore; 
+    playerScoreText.textContent = playerScore;
   }
   else if (player == "charmander" && comp == "bulbasaur") {
     loadingText.textContent = "You win!";
@@ -326,8 +324,6 @@ function roundResult(){
   }
   winnerResult()
 }
-
-
 
 function nextRound(){
   squirtle.removeAttribute("disabled");
@@ -377,7 +373,40 @@ function winnerResult(){
   else{
     nextRd.style.display = "block";
   }
+
+  // switch statement sample
+  const newSpan = document.createElement("span");
+  switch (true){
+    case (loadingText.textContent == "Player win!") :
+      resultText.appendChild(newSpan);
+      newSpan.innerText = "Player win the game";
+      newSpan.style.color = "#16FF00"
+      break;
+    case (loadingText.textContent == "Computer win!") :
+      resultText.appendChild(newSpan);
+      newSpan.innerText = "Computer win the game";
+      newSpan.style.color = "#DF2E38"
+      break;
+    case (loadingText.textContent == "You win!") :
+      resultText.appendChild(newSpan);
+      newSpan.innerText = "Player win the round";
+      newSpan.style.color = "darkgray"
+      break;
+    case (loadingText.textContent == "You lose!") :
+      resultText.appendChild(newSpan);
+      newSpan.style.color = "darkgray"
+      newSpan.innerText = "Computer win the round";
+      break;
+    case (loadingText.textContent == "Draw") :
+      resultText.appendChild(newSpan);
+      newSpan.innerText = "Draw";
+      newSpan.style.color = "darkgray"
+      break;
+    default :
+      alert("error 404: the programmer is handsome");
+  }
 }
+
 function reset(){
   document.querySelector("#easy").checked = false;
   document.querySelector("#normal").checked = false;
@@ -392,6 +421,6 @@ function reset(){
   winnerScore = 0;
   newGame.style.display = "none";
   modal.style.display = "flex";
-  nextRound();
   gameDif = "none";
+  nextRound();
 }

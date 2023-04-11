@@ -191,6 +191,24 @@ h1{
   color: white;
   gap: 25px;
 }
+
+#game-results{
+  width: 500px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 20px;
+}
+.result-title{
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: gray;
+  margin-bottom: 20px;
+}
+#result-text span{
+  font-size: 1.2rem; 
+  letter-spacing: 2px;
+  margin-block: 5px;
+}
 #win-text{
   font-size: 1.5rem;
   letter-spacing: 2px;
